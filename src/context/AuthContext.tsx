@@ -17,7 +17,8 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 
     useEffect(() => {
         const handleChangeToken = () => {
-            setIsAuthenticated(!!Cookies.get("token"));
+            const getToken = Cookies.get("token");
+            setIsAuthenticated(!!getToken);
         };
 
         window.addEventListener("storage", handleChangeToken);

@@ -11,11 +11,11 @@ export const useSignin = () => {
     const signInFn = async (data: SigninRequestType) => {
         const response = await API.post("api/user/login", data)
         return response.data
-    }
+    };
 
     const mutation = useMutation({
         mutationFn: signInFn
-    })
+    });
 
-    return mutation
+    return mutation;
 }
